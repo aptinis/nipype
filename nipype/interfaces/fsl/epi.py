@@ -686,13 +686,13 @@ class EddyInputSpec(FSLCommandInputSpec):
         False, argstr="--repol", desc="Detect and replace outlier slices"
     )
     outlier_nstd = traits.Int(
-        argstr="--ol_nstd",
+        argstr="--ol_nstd=%s",
         desc="Number of std off to qualify as outlier",
         requires=["repol"],
         min_ver="5.0.10",
     )
     outlier_nvox = traits.Int(
-        argstr="--ol_nvox",
+        argstr="--ol_nvox=%s",
         desc="Min # of voxels in a slice for inclusion in outlier detection",
         requires=["repol"],
         min_ver="5.0.10",
@@ -701,7 +701,7 @@ class EddyInputSpec(FSLCommandInputSpec):
         "sw",
         "gw",
         "both",
-        argstr="--ol_type",
+        argstr="--ol_type=%s",
         desc="Type of outliers, slicewise (sw), groupwise (gw) or both (both)",
         requires=["repol"],
         min_ver="5.0.10",
